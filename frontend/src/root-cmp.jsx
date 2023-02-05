@@ -12,6 +12,7 @@ import { ReviewIndex } from './pages/review-index'
 import { ChatApp } from './pages/chat-app'
 import { AboutUs } from './pages/about-us'
 import { AdminApp } from './pages/admin-app'
+import { CommentIndex } from './pages/comment-index'
 
 export function RootCmp() {
 
@@ -20,14 +21,15 @@ export function RootCmp() {
             <AppHeader />
             <main>
                 <Routes>
-                    {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
-                    <Route path="/" element={<HomePage />} />
+                    <Route path="/comment" element={<CommentIndex />} />
+                        {/* {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)} */}
+                        {/* <Route path="/" element={<HomePage />} />
                     <Route path="car" element={<CarIndex />} />
                     <Route path="review" element={<ReviewIndex />} />
                     <Route path="about" element={<AboutUs />} />
                     <Route path="admin" element={<AdminApp />} />
                     <Route path="chat" element={<ChatApp />} />
-                    <Route path="user/:id" element={<UserDetails />} />
+                    <Route path="user/:id" element={<UserDetails />} /> */}
                 </Routes>
             </main>
             <AppFooter />
