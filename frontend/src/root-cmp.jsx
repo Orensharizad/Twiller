@@ -7,7 +7,7 @@ import { MainSideMenu } from './cmps/main-side-menu'
 
 export function RootCmp() {
     return (
-        <div>
+        <div className="app">
             <main className="main-container">
                 <Routes>
                     <Route path="/comment" element={<CommentIndex />} />

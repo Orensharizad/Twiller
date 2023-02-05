@@ -3,6 +3,10 @@
     background-color: $clr1;
     border: 1px solid $border-clr;
     max-width: 600px;
-    margin: auto;
+    margin: 0 auto;
     overflow-y: auto;
+
+    @include for-mobile-layout {
+        width: 100vw;
+    }
 }

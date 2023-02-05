@@ -1,9 +1,13 @@
+.app {
+    overflow-y: hidden;
+}
+
 .main-container {
     height: calc(100vh - 72px);
     display: grid;
     grid-template-columns: 40px 1fr 40px;
 
-    > * {
+    >* {
         grid-column: 2;
 
         &.full {
@@ -11,23 +15,24 @@
         }
     }
 
+    @include for-mobile-layout {
+        grid-template-columns:  1fr;
+        // grid-template-columns: 5px minmax(auto, $mobile-breakpoint) 5px;
+    }
+
     @include for-narrow-layout {
-        grid-template-columns: 
-            minmax(20px, 1fr)
-            minmax(auto, $mobile-breakpoint)
-            minmax(20px, 1fr);
+        grid-template-columns:
+            minmax(20px, 1fr) minmax(auto, $mobile-breakpoint) minmax(20px, 1fr);
     }
+
     @include for-normal-layout {
-        grid-template-columns: 
-            minmax(20px, 1fr)
-            minmax(auto, $narrow-breakpoint)
-            minmax(20px, 1fr);
+        grid-template-columns:
+            minmax(20px, 1fr) minmax(auto, $narrow-breakpoint) minmax(20px, 1fr);
     }
+
     @include for-wide-layout {
-        grid-template-columns: 
-            minmax(20px, 1fr)
-            minmax(auto, $normal-breakpoint)
-            minmax(20px, 1fr);
+        grid-template-columns:
+            minmax(20px, 1fr) minmax(auto, $normal-breakpoint) minmax(20px, 1fr);
     }
 }
 
@@ -36,4 +41,3 @@
 //     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 //     grid-gap: 20px;
 // }
-
