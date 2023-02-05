@@ -6,7 +6,6 @@ export function CommentForm({ setComments }) {
     const [register, comment, setComment] = useFormRegister(commentService.getEmptyComment())
 
     const sendComment = async (ev, comment) => {
-        if (!comment.length) return
         ev.preventDefault()
         try {
             const newComment = await commentService.save(comment)
@@ -19,12 +18,11 @@ export function CommentForm({ setComments }) {
 
     return (
         <div className="comment-form">
-
-            <form >
+            <form onSubmit={(ev) => sendComment(ev, comment)}  >
                 <input placeholder="Email" {...register('email')} required />
                 <textarea placeholder="What's happening?" {...register('txt')} required></textarea>
+                <button className="btn-tweet">Tweet</button>
             </form>
-            <button onClick={(ev) => sendComment(ev, comment)} className="btn-tweet">Tweet</button>
         </div>
     )
 }
