@@ -1,7 +1,7 @@
 import { useFormRegister } from "../customHooks/useFormRegister"
 import { commentService } from "../services/comment.service"
 
-export function CommentForm() {
+export function CommentForm({ setComments }) {
 
     const [register, comment] = useFormRegister(commentService.getEmptyComment())
 
@@ -9,7 +9,7 @@ export function CommentForm() {
         ev.preventDefault()
         try {
             const newComment = await commentService.save(comment)
-
+            setComments(prevComments => [newComment, ...prevComments])
         } catch (err) {
             console.log('Cannot save comment:', err)
         }

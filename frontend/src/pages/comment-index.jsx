@@ -14,17 +14,15 @@ export function CommentIndex() {
         try {
             const comments = await commentService.query()
             setComments(comments)
-
         } catch (err) {
             console.error(err, 'cannot get commets')
         }
-
     }
 
 
     return (
         <section className="comment-index">
-            <CommentForm />
+            <CommentForm setComments={setComments} />
             <CommentList />
         </section>
     )
