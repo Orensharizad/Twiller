@@ -1,7 +1,11 @@
-.app-footer{
-    background-color: $sec-color;
+.app-footer {
+    height: 72px;
+    background-color: $sec-clr;
     color: $clr4;
-    padding: 20px;
-    margin: 10px;
+    // padding: 20px;
     text-align: center;
+
+    @include for-mobile-layout {
+        height: 65px;
+    }
 }

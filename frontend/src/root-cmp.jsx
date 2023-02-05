@@ -8,8 +8,8 @@ import { CommentIndex } from './pages/comment-index'
 export function RootCmp() {
     return (
         <div>
-            <AppHeader />
-            <main>
+            {/* <AppHeader /> */}
+            <main className="main-container">
                 <Routes>
                     <Route path="/comment" element={<CommentIndex />} />
                 </Routes>
