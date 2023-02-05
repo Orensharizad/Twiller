@@ -12,6 +12,7 @@ export const commentService = {
 }
 window.cs = commentService
 
+
 async function query(filterBy = { txt: '', price: 0 }) {
     var cars = await storageService.query(STORAGE_KEY)
     if (filterBy.txt) {
@@ -54,12 +55,35 @@ function getEmptyComment() {
     }
 }
 
-function _createComment(email, imgUrl, txt) {
-    const comment = {
-        email,
-        imgUrl,
-        txt,
+_createComments()
+
+
+function _createComments() {
+    console.log('hey')
+    let comments = storageService.loadFromStorage(STORAGE_KEY)
+
+    if (!comments) {
+
+        comments = [
+            {
+                email: 'oren@gmail.com',
+                txt: 'hello world',
+                imgUrl: 'url(https://robohash.org/oren)'
+            },
+            {
+                email: 'liad@gmail.com',
+                txt: 'hello world im liad ',
+                imgUrl: 'url(https://robohash.org/liad)'
+            },
+            {
+                email: 'or@gmail.com',
+                txt: 'hello world',
+                imgUrl: 'url(https://robohash.org/or)'
+            },
+        ]
+        storageService.saveToStorage(STORAGE_KEY, comments)
     }
-    return comment
+    console.log('comments:', comments)
+    // return comments
 }
 
