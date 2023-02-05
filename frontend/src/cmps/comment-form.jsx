@@ -1,17 +1,22 @@
 import { useFormRegister } from "../customHooks/useFormRegister"
 import { commentService } from "../services/comment.service"
 
-export function CommentForm() {
+export function CommentForm({ setComments }) {
 
     const [register, comment] = useFormRegister(commentService.getEmptyComment())
 
-    const sendComment = (ev,comment) => {
+    const sendComment = async (ev, comment) => {
         ev.preventDefault()
-        console.log(comment)
+        try {
+            const newComment = await commentService.save(comment)
+            setComments(prevComments => [newComment, ...prevComments])
+        } catch (err) {
+            console.log('Cannot save comment:', err)
+        }
     }
 
     return (
-        <form className="comment-form" onSubmit={(ev) => sendComment(ev,comment)}>
+        <form className="comment-form" onSubmit={(ev) => sendComment(ev, comment)}>
             <input placeholder="Email" {...register('email')} />
             <textarea placeholder="Message" {...register('txt')}></textarea>
             <button>Submit</button>
