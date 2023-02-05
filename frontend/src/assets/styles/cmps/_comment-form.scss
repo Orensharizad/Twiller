@@ -1,24 +1,21 @@
 .comment-form {
-
+    margin-top: 20px;
 
     form {
-
         border: 1px solid $border-clr;
-    }
 
-    input,
-    textarea {
-        width: 100%;
-        border: none;
-        resize: none;
-        min-height: 30px;
-        outline: none;
+        input,
+        textarea {
+            width: 100%;
+            border: none;
+            resize: none;
+            min-height: 30px;
+            outline: none;
+        }
 
-
-    }
-
-    textarea {
-        min-height: 100px;
+        textarea {
+            min-height: 100px;
+        }
     }
 
     .btn-tweet {

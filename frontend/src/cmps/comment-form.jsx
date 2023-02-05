@@ -6,6 +6,7 @@ export function CommentForm({ setComments }) {
     const [register, comment, setComment] = useFormRegister(commentService.getEmptyComment())
 
     const sendComment = async (ev, comment) => {
+        if (!comment.length) return
         ev.preventDefault()
         try {
             const newComment = await commentService.save(comment)
