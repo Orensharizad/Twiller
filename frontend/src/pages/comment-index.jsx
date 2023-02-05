@@ -11,9 +11,9 @@ export function CommentIndex() {
         loadComments()
     }, [])
 
-    const loadComments = async () => {
+    const loadComments = async (filter) => {
         try {
-            const comments = await commentService.query()
+            const comments = await commentService.query(filter)
             setComments(comments)
         } catch (err) {
             console.error(err, 'cannot get commets')
@@ -23,6 +23,7 @@ export function CommentIndex() {
 
     return (
         <section className="comment-index">
+
             <CommentForm setComments={setComments} />
             <CommentList comments={comments} />
         </section>

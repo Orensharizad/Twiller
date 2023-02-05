@@ -1,6 +1,4 @@
-
 import { httpService } from './http.service.js'
-import { utilService } from './util.service.js'
 
 const BASE_URL = 'comment/'
 
@@ -10,6 +8,7 @@ export const commentService = {
     save,
     remove,
     getEmptyComment,
+    getEmptyFilter,
 }
 window.cs = commentService
 
@@ -42,6 +41,12 @@ function getEmptyComment() {
         email: '',
         imgUrl: 'https://robohash.org/oren',
         txt: '',
+    }
+}
+
+function getEmptyFilter(){
+    return {
+        email:''
     }
 }
 
