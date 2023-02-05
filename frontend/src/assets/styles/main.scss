@@ -13,8 +13,10 @@
 
 
 // Views
-@import "cmps/comment-index";
+@import "views/comment-index";
 
 // Components
+@import "cmps/app-header";
+@import "cmps/app-footer";
 @import "cmps/comment-list";
 @import "cmps/comment-preview";
