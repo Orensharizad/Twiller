@@ -28,7 +28,7 @@ export function CommentIndex() {
             <CommentFilter loadComments={loadComments} />
             <CommentForm setComments={setComments} />
             <CommentList comments={comments} />
-            {/* <MainSideMenu /> */}
+            <MainSideMenu />
         </section>
     )
 }

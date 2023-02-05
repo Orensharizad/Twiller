@@ -12,4 +12,8 @@
         fill: #1DA1F2;
     }
 
+    @include for-mobile-layout {
+        display: none;
+    }
+
 }
