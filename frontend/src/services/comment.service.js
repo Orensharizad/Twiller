@@ -13,7 +13,7 @@ export const commentService = {
 window.cs = commentService
 
 
-async function query(filterBy = { }) {
+async function query(filterBy = {}) {
     let comments = await storageService.query(STORAGE_KEY)
     // if (filterBy.txt) {
     //     const regex = new RegExp(filterBy.txt, 'i')
@@ -59,7 +59,6 @@ _createComments()
 
 
 function _createComments() {
-    console.log('hey')
     let comments = storageService.loadFromStorage(STORAGE_KEY)
 
     if (!comments) {
@@ -69,19 +68,19 @@ function _createComments() {
                 _id: utilService.makeId(),
                 email: 'oren@gmail.com',
                 txt: 'hello world',
-                imgUrl: 'url(https://robohash.org/oren)'
+                imgUrl: 'https://robohash.org/oren'
             },
             {
                 _id: utilService.makeId(),
                 email: 'liad@gmail.com',
                 txt: 'hello world im liad ',
-                imgUrl: 'url(https://robohash.org/liad)'
+                imgUrl: 'https://robohash.org/liad'
             },
             {
                 _id: utilService.makeId(),
                 email: 'or@gmail.com',
                 txt: 'hello world',
-                imgUrl: 'url(https://robohash.org/or)'
+                imgUrl: 'https://robohash.org/or'
             },
         ]
         storageService.saveToStorage(STORAGE_KEY, comments)

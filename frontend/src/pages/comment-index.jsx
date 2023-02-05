@@ -5,6 +5,7 @@ import { commentService } from "../services/comment.service"
 
 export function CommentIndex() {
     const [comments, setComments] = useState([])
+    console.log('comments: ', comments);
 
     useEffect(() => {
         loadComments()
@@ -25,7 +26,7 @@ export function CommentIndex() {
     return (
         <section className="comment-index">
             <CommentForm />
-            <CommentList />
+            <CommentList comments={comments} />
         </section>
     )
 }
