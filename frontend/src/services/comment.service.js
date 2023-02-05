@@ -1,7 +1,8 @@
 import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
 
-const STORAGE_KEY = 'comment'
+const STORAGE_KEY = 'commentDB'
+_createComments()
 
 export const commentService = {
     query,
@@ -13,7 +14,7 @@ export const commentService = {
 window.cs = commentService
 
 
-async function query(filterBy = { }) {
+async function query(filterBy = {}) {
     let comments = await storageService.query(STORAGE_KEY)
     // if (filterBy.txt) {
     //     const regex = new RegExp(filterBy.txt, 'i')
@@ -55,7 +56,6 @@ function getEmptyComment() {
     }
 }
 
-_createComments()
 
 
 function _createComments() {
@@ -65,27 +65,38 @@ function _createComments() {
     if (!comments) {
 
         comments = [
-            {
-                _id: utilService.makeId(),
-                email: 'oren@gmail.com',
-                txt: 'hello world',
-                imgUrl: 'url(https://robohash.org/oren)'
-            },
-            {
-                _id: utilService.makeId(),
-                email: 'liad@gmail.com',
-                txt: 'hello world im liad ',
-                imgUrl: 'url(https://robohash.org/liad)'
-            },
-            {
-                _id: utilService.makeId(),
-                email: 'or@gmail.com',
-                txt: 'hello world',
-                imgUrl: 'url(https://robohash.org/or)'
-            },
+            _createComment('oren@gmail.com', 'hello world'),
+            _createComment('liad@gmail.com', 'hello world im liad'),
+            _createComment('or@gmail.com', 'hello world'),
+            // {
+            //     _id: utilService.makeId(),
+            //     email: 'oren@gmail.com',
+            //     txt: 'hello world',
+            //     imgUrl: 'url(https://robohash.org/oren)'
+            // },
+            // {
+            //     _id: utilService.makeId(),
+            //     email: 'liad@gmail.com',
+            //     txt: 'hello world im liad',
+            //     imgUrl: 'url(https://robohash.org/liad)'
+            // },
+            // {
+            //     _id: utilService.makeId(),
+            //     email: 'or@gmail.com',
+            //     txt: 'hello world',
+            //     imgUrl: 'url(https://robohash.org/or)'
+            // },
         ]
         storageService.saveToStorage(STORAGE_KEY, comments)
     }
-    // return comments
+}
+
+function _createComment(email, txt, imgUrl) {
+    return {
+        _id: utilService.makeId(),
+        email,
+        txt,
+        imgUrl
+    }
 }
 
