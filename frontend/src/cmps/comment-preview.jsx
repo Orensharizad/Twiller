@@ -9,7 +9,7 @@ export function CommentPreview({ comment }) {
     }
 
     return (
-        <section className='comment-preview flex'>
+        <section className="comment-preview">
             <div style={commentStyle()} className="comment-img"></div>
             <div className="comment-content">
                 <h3 className="comment-email">{comment.email}</h3>
