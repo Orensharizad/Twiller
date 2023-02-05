@@ -48,9 +48,9 @@ async function save(comment) {
 function getEmptyComment() {
     return {
         email: '',
-        imgUrl: '',
+        // imgUrl: '',
         txt: '',
-        createdAt: Date.now()
+        // createdAt: Date.now()
     }
 }
 

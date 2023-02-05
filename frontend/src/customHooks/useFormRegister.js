@@ -26,7 +26,6 @@ export const useFormRegister = (initialState, cb) => {
     }
 
     const register = (field, type='') => {
-
         return {
             type,
             name: field,
@@ -37,5 +36,5 @@ export const useFormRegister = (initialState, cb) => {
 
     }
 
-    return [register, setFields]
+    return [register, fields, setFields]
 }
