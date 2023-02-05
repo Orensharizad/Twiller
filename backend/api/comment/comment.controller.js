@@ -2,9 +2,9 @@ const commentService = require('./comment.service.js')
 
 const logger = require('../../services/logger.service')
 
-async function getCommets(req, res) {
+async function getComments(req, res) {
   try {
-    logger.debug('Getting Cars')
+    logger.debug('Getting Comments')
     const filterBy = {
       txt: req.query.txt || ''
     }
@@ -67,7 +67,7 @@ async function removeComment(req, res) {
 
 
 module.exports = {
-  getCommets,
+  getComments,
   getCommentById,
   addComment,
   updateComment,
