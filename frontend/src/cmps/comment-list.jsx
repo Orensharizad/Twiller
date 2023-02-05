@@ -1,4 +1,4 @@
-import { CommentPreview } from "./comment-preview";
+import { CommentPreview } from "./comment-preview"
 
 export function CommentList({ comments }) {
     return (
@@ -6,7 +6,6 @@ export function CommentList({ comments }) {
             {comments.map(comment =>
                 <CommentPreview key={comment._id} comment={comment} />
             )}
-
         </section>
     )
 }

@@ -16,13 +16,6 @@ window.cs = commentService
 
 async function query(filterBy = {}) {
     let comments = await storageService.query(STORAGE_KEY)
-    // if (filterBy.txt) {
-    //     const regex = new RegExp(filterBy.txt, 'i')
-    //     comments = comments.filter(comment => regex.test(comment.vendor) || regex.test(comment.description))
-    // }
-    // if (filterBy.price) {
-    //     comments = comments.filter(comment => comment.price <= filterBy.price)
-    // }
     return comments
 }
 
@@ -31,7 +24,6 @@ function getById(commentId) {
 }
 
 async function remove(commentId) {
-    // throw new Error('Nope')
     await storageService.remove(STORAGE_KEY, commentId)
 }
 
@@ -50,9 +42,7 @@ async function save(comment) {
 function getEmptyComment() {
     return {
         email: '',
-        // imgUrl: '',
         txt: '',
-        // createdAt: Date.now()
     }
 }
 

@@ -5,7 +5,6 @@ export function CommentPreview({ comment }) {
             backgroundImage: `url(${comment.imgUrl})`
         }
         return style
-
     }
 
     return (

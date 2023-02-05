@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import { SearchIcon } from "../assets/icons-libary"
 import { useEffectUpdate } from "../customHooks/useEffectUpdate"
 import { useForm } from "../customHooks/useForm"

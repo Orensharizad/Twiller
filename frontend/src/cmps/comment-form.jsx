@@ -2,7 +2,6 @@ import { useFormRegister } from "../customHooks/useFormRegister"
 import { commentService } from "../services/comment.service"
 
 export function CommentForm({ setComments }) {
-
     const [register, comment, setComment] = useFormRegister(commentService.getEmptyComment())
 
     const sendComment = async (ev, comment) => {
