@@ -2,10 +2,10 @@ const dbService = require('../../services/db.service')
 const logger = require('../../services/logger.service')
 const ObjectId = require('mongodb').ObjectId
 
-async function query(filterBy = { txt: '' }) {
+async function query(filterBy = { email: '' }) {
     try {
         const criteria = {
-            txt: { $regex: filterBy.txt, $options: 'i' }
+            email: { $regex: filterBy.email, $options: 'i' }
         }
         const collection = await dbService.getCollection('comment')
         var comments = await collection.find(criteria).toArray()
