@@ -17,10 +17,13 @@ export function CommentForm({ setComments }) {
     }
 
     return (
-        <form className="comment-form" onSubmit={(ev) => sendComment(ev, comment)}>
-            <input placeholder="Email" {...register('email')} required />
-            <textarea placeholder="Message" {...register('txt')} required></textarea>
-            <button>Submit</button>
-        </form>
+        <div className="comment-form">
+
+            <form >
+                <input placeholder="Email" {...register('email')} required />
+                <textarea placeholder="What's happening?" {...register('txt')} required></textarea>
+            </form>
+            <button onClick={(ev) => sendComment(ev, comment)} className="btn-tweet">Tweet</button>
+        </div>
     )
 }

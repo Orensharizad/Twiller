@@ -1,0 +1,38 @@
+.comment-form {
+
+
+    form {
+
+        border: 1px solid $border-clr;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        border: none;
+        resize: none;
+        min-height: 30px;
+        outline: none;
+
+
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    .btn-tweet {
+        background-color: rgb(29, 155, 240);
+        color: #fff;
+        min-height: 36px;
+        max-width: 77px;
+        padding: 0 16px;
+        border-radius: 2em;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+
+}
