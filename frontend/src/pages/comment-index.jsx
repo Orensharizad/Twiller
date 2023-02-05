@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
+import { CommentFilter } from "../cmps/comment-filter"
 import { CommentForm } from "../cmps/comment-form"
 import { CommentList } from "../cmps/comment-list"
 import { commentService } from "../services/comment.service"
 
 export function CommentIndex() {
     const [comments, setComments] = useState([])
-    console.log('comments: ', comments);
+    console.log('comments: ', comments)
 
     useEffect(() => {
         loadComments()
@@ -23,7 +24,7 @@ export function CommentIndex() {
 
     return (
         <section className="comment-index">
-
+            <CommentFilter loadComments={loadComments} />
             <CommentForm setComments={setComments} />
             <CommentList comments={comments} />
         </section>

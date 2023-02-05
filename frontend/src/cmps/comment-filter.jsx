@@ -1,11 +1,14 @@
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
+import { useEffectUpdate } from "../customHooks/useEffectUpdate"
 import { useForm } from "../customHooks/useForm"
 import { commentService } from "../services/comment.service"
+import { utilService } from "../services/util.service"
 
-export function CommentFilter() {
+export function CommentFilter({ loadComments }) {
     const [filter, setFilter, handleChange] = useForm(commentService.getEmptyFilter())
-    useEffect(() => {
-
+    const loadCommentsRef = useRef(utilService.debounce(loadComments))
+    useEffectUpdate(() => {
+        loadCommentsRef.current(filter)
     }, [filter])
     return (
         <section className="comment-filter">
