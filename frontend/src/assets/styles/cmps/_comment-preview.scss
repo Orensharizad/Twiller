@@ -13,10 +13,11 @@
         height: 50px;
         background-size: cover;
         border-radius: 50%;
-        background-color: red;
+        background-color: #f4f7f8;
     }
 
     .comment-content {
+        // width: 80%;
         flex-grow: 1;
         padding-inline-start: 10px;
     }
