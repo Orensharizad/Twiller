@@ -1,0 +1,26 @@
+.comment-filter {
+    display: flex;
+    align-items: center;
+    background-color: #eff3f4;
+    height: 42px;
+    border-radius: 2em;
+    // margin: 0 16px;
+
+    >* {
+        color: #536371;
+    }
+
+    .icon-container {
+        padding-inline-start: 12px;
+        display: flex;
+        align-items: center;
+    }
+
+    input {
+        outline: none;
+        border: none;
+        padding: 12px;
+        font-size: 15px;
+        background-color: inherit;
+    }
+}
