@@ -10,6 +10,11 @@
         color: #536371;
     }
 
+    &:focus-within {
+        background-color: $clr1;
+        border: 1px solid $sec-clr;
+    }
+
     .icon-container {
         padding-inline-start: 12px;
         display: flex;
@@ -17,6 +22,10 @@
     }
 
     input {
+        // flex-grow: 1;
+        width: 85%;
+        height: 95%;
+        border-radius: 2em;
         outline: none;
         border: none;
         padding: 12px;
