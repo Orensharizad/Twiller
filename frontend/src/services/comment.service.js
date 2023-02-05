@@ -59,33 +59,12 @@ function getEmptyComment() {
 
 
 function _createComments() {
-    console.log('hey')
     let comments = storageService.loadFromStorage(STORAGE_KEY)
-
     if (!comments) {
-
         comments = [
-            _createComment('oren@gmail.com', 'hello world'),
-            _createComment('liad@gmail.com', 'hello world im liad'),
-            _createComment('or@gmail.com', 'hello world'),
-            // {
-            //     _id: utilService.makeId(),
-            //     email: 'oren@gmail.com',
-            //     txt: 'hello world',
-            //     imgUrl: 'url(https://robohash.org/oren)'
-            // },
-            // {
-            //     _id: utilService.makeId(),
-            //     email: 'liad@gmail.com',
-            //     txt: 'hello world im liad',
-            //     imgUrl: 'url(https://robohash.org/liad)'
-            // },
-            // {
-            //     _id: utilService.makeId(),
-            //     email: 'or@gmail.com',
-            //     txt: 'hello world',
-            //     imgUrl: 'url(https://robohash.org/or)'
-            // },
+            _createComment('oren@gmail.com', 'hello world', 'https://robohash.org/oren'),
+            _createComment('liad@gmail.com', 'hello world im liad', 'https://robohash.org/liad'),
+            _createComment('or@gmail.com', 'hello world', 'https://robohash.org/or'),
         ]
         storageService.saveToStorage(STORAGE_KEY, comments)
     }
