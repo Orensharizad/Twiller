@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { CommentForm } from "../cmps/comment-form"
 import { CommentList } from "../cmps/comment-list"
+import { MainSideMenu } from "../cmps/main-side-menu"
 import { commentService } from "../services/comment.service"
 
 export function CommentIndex() {
@@ -25,6 +26,7 @@ export function CommentIndex() {
         <section className="comment-index">
             <CommentForm setComments={setComments} />
             <CommentList comments={comments} />
+            <MainSideMenu />
         </section>
     )
 }

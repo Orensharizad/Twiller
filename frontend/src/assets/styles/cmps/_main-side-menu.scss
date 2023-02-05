@@ -1,13 +1,13 @@
 .main-side-menu {
-    width: 35vw;
+    width: 20vw;
     height: 100vh;
     position: fixed;
     left: 0;
-    background-color: gray;
+    top: 0;
     z-index: 1;
 
     svg {
-        fill: aqua;
+        fill: #1DA1F2;
     }
 
 }
