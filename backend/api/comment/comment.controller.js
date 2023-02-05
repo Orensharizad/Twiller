@@ -6,7 +6,7 @@ async function getComments(req, res) {
   try {
     logger.debug('Getting Comments')
     const filterBy = {
-      txt: req.query.txt || ''
+      email: req.query.email || ''
     }
     const comments = await commentService.query(filterBy)
     res.json(comments)
