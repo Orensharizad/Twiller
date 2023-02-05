@@ -10,8 +10,7 @@ export function RootCmp() {
     return (
         <div>
             {/* <AppHeader /> */}
-            {/* <MainSideMenu /> */}
-            <main>
+            <main className="main-container">
                 <Routes>
                     <Route path="/comment" element={<CommentIndex />} />
                 </Routes>
